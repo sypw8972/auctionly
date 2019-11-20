@@ -1,0 +1,203 @@
+/****** body ******/
+body {
+  width: 1080px;
+  margin: auto;
+  font-family: Arial;
+}
+
+/****** top nav ******/
+nav {
+  font-size: 12px;
+  margin: 20px 0;
+}
+
+.menuline {
+  color: #999999;
+  padding: 0 15px;
+}
+
+.right {
+  float: right;
+}
+
+/****** logo and search ******/
+#logoAndSearch {
+  height: 40px;
+  margin: 15px 0;
+  display: flex;
+}
+
+#mainLogo {
+  margin-top:4px;
+  object-fit: contain;
+}
+
+#searchBar {
+  width: 540px;
+  height: 30px;
+  margin-left: 12px;
+  display: flex;
+}
+
+#search {
+  width: 480px;
+  height: 36px;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 8px;
+  border: solid #34597C 3px;
+}
+
+#searchbut {
+  border: solid #34597C 3px;
+  border-left: none;
+}
+
+/****** main navigation ******/
+#secNav {
+  height: 16px;
+  font-size: 14px;
+  margin: 24px 0;
+}
+
+.leftpad {
+  padding-left: 35px;
+}
+
+#silgum {
+  float: right;
+  margin-right: 24px
+}
+
+/****** main page ******/
+#mainwhole {
+  height: 1080px;
+  display: flex;
+}
+/****** side ******/
+#side {
+  width: 220px;
+  height: inherit;
+  padding: 0 5px;
+  float: left;
+}
+
+#loginbut {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#loginnav {
+  font-size: 12px;
+  margin-top: 8px;
+  margin-bottom: 30px;
+}
+
+.imgonly {
+  margin-bottom: 30px;
+}
+
+.leftnav {
+  margin: 0;
+  font-size: 14px;
+  float: left;
+}
+
+.rightnav {
+  float: right;
+  font-size: 12px;
+}
+
+ul {
+  font-size: 12px;
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+li>span {
+  padding-left: 5px;
+}
+
+/****** center ******/
+#centerdiv {
+  width: 820px;
+  margin-left: 20px;
+}
+
+#hotauction {
+  width: 820px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#hottitle {
+  padding: 0 7px;
+}
+
+#hotproducts {
+  width: 820px;
+  height: 400px;
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.oneproduct {
+  width: 150px;
+  margin: 0 7px 14px 7px;
+}
+
+.productname {
+  font-size: 13px;
+  margin: 7px 0;
+}
+
+.price {
+  font-size: 11px;
+  margin: 0;
+}
+
+.gam, .jeo, .nak {
+  float: left;
+  color: white;
+}
+
+.gam {
+  background-color: black;
+}
+
+.jeo {
+  background-color: royalblue;
+}
+
+.nak {
+  background-color: darkred;
+}
+
+.gamprice, .jeoprice, .nakprice{
+  float: right;
+}
+
+.gamprice {
+  color: black;
+}
+
+.jeoprice {
+  color: royalblue;
+}
+
+.nakprice {
+  color: darkred;
+}
+
+/****** footer ******/
+footer{
+  color: darkgrey;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
