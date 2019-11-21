@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Auctionly</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,50 +16,17 @@
 </head>
 
 <body>
-  <nav>
-    <a>시작페이지로</a>
-    <a class="menuline">|</a>
-    <a>즐겨찾기 추가</a>
-    <a class="right">고객센터</a>
-    <a class="menuline right">|</a>
-    <a class="right">회원가입</a>
-    <a class="menuline right">|</a>
-    <a class="right">홈</a>
-  </nav>
-
-  <div id="logoAndSearch">
-    <img src="src/logo.png" width="235" id="mainLogo">
-    <div id="searchBar">
-      <input id="search">
-      <img src="src/searchbut.png" height="38" id="searchbut">
-    </div>
-  </div>
-
-  <div id="secNav">
-    <a>경매검색</a>
-    <a class="leftpad">결과/통계</a>
-    <a class="leftpad">경매예정</a>
-    <a class="leftpad">커뮤니티</a>
-    <a class="leftpad">고객센터</a>
-    <a class="leftpad">더보기</a>
-    <img src="src/silgum.png" height="16" id="silgum">
-  </div>
+  <div id="nav-placeholder"></div>
 
   <div id="mainwhole">
     <div id="side">
-      <div id="login_section">
-        <a href="#hotproducts"><img src="src/loginbut.png" width="210" id="loginbut"></a>
-        <div id="loginnav">
-          <a>아이디 / 비밀번호 찾기</a>
-          <a class="right">회원가입</a>
-        </div>
-      </div>
+      <div id="mypage"></div>
       <img src="src/curprocess.png" width="220" class="imgonly">
       <img src="src/searchbyr.png" width="220" class="imgonly">
       <img src="src/map.png" width="170" class="imgonly">
       <div>
         <p class="leftnav">커뮤니티</p>
-        <a class="rightnav">더보기</a>
+        <a href="community.html" class="rightnav">더보기</a>
       </div><br>
       <hr>
       <ul>
@@ -249,22 +216,7 @@
     </div>
   </div>
 
-  <footer>
-    <div>
-      <a>회사소개</a>
-      <a class="menuline">|</a>
-      <a>개인정보처리방침</a>
-      <a class="menuline">|</a>
-      <a>이용약관</a>
-      <a class="menuline">|</a>
-      <a>고객센터</a>
-      <a class="menuline">|</a>
-      <a>제휴문의</a>
-      <a class="right">서비스 전체보기</a>
-    </div><br>
-    <p>Copyright AUCTIONLY. All Rights Reserved</p>
-  </footer>
-
+  <div id="footer-placeholder"></div>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -274,7 +226,17 @@
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
+      $(function(){
+          $("#nav-placeholder").load("nav.html");
+      });
 
+      $(function(){
+          $("#footer-placeholder").load("footer.html");
+      });
+
+      $(function(){
+          $("#mypage").load("mypage.html");
+      });
   </script>
 </body>
 
