@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
+      body {
+        width: 820px;
+        padding: 18px 10px 0 10px;
+        margin: 0;
+      }
+
+      #seminav {
+        width: 800px;
+        height: 36px;
+      }
+
+      #seminav img {
+        float: right;
+        padding-left: 12px;
+      }
+
       .chunkdiv {
         width: 800px;
         margin: 30px 0 30px 0;
@@ -38,6 +54,12 @@
 
       .detail_blank {
 
+      }
+
+      table {
+        width: 800px;
+        border-collapse: collapse;
+        font-size: 12px;
       }
 
       table, th, td {
@@ -96,6 +118,8 @@
       #comment {
         width: 776px;
         margin: 15px 12px 15px 12px;
+        padding-left: 15px;
+        padding-right: 15px;
       }
 
       #comment p {
@@ -104,20 +128,113 @@
         line-height: 2px;
       }
 
-      #comment {
-        padding-left: 15px;
-        padding-right: 15px;
+      #comment span {
+        float: right;
+        margin-right: 16px;
+      }
+
+      #comment_input {
+        width: 776px;
+        height: 35px;
+        margin: 0 12px 0 12px;
+        padding-left: 10px;
+        border: #dde3e6 solid 1px;
+        border-radius: 2px;
+      }
+
+      #user_info {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        opacity: 50%;
+        display: none;
+      }
+
+      #info_box {
+        width: 60%;
+        height: 30%;
+        top: 35%;
+        left: 20%;
+        position: fixed;
+        background-color: white;
+        opacity: 100%;
+        display: none;
+        flex-wrap: wrap;
+        border-radius: 5px;
+      }
+
+      #info_box h1 {
+        margin: 47px 0 10px 20px;
+        font-size: 36px;
+      }
+
+      #info_box h3 {
+        margin-left: 20px;
+        font-size: 16px;
+      }
+
+      #info_box h3 span {
+        font-size: 12px;
+        font-weight: normal;
+      }
+
+      #rating, #grade {
+        width: 49.8%;
+        height: 30%;
+        border-top: lightgray solid 1px;
+        text-align: center;
+      }
+
+      #rating {
+        border-right: lightgray solid 1px;
+      }
+
+      #info_box p {
+        font-size: 40px;
+        margin-top: 15px;
+      }
+
+      #which_rating, #which_grade {
+        font-size: 50px;
+      }
+
+      #which_rating {
+        color: blue;
+      }
+
+      #which_grade {
+        color: red;
       }
 
     </style>
 </head>
-<body style="width: 820px; padding: 18px 10px 0 10px; margin: 0;">
-  <div style="width: 800px; height: 36px">
+<body>
+  <div id="user_info" onclick="closeRating()"></div>
+  <div id="info_box">
+    <div style="width: 100%; height: 70%; display: flex;">
+      <img src="src/profileimg.png" width="30%" style="margin: 20px;">
+      <div>
+        <h1>User ID</h1>
+        <h3>주소:<br><span>0x32D57e7ffEb6F17f85F5D9EA8EC657459B7D084F</span></h3>
+      </div>
+    </div>
+    <div id="rating">
+      <p>점수: <span id="which_rating">4.2</span></p>
+    </div>
+    <div id="grade">
+      <p>등급: <span id="which_grade">태양신</span></p>
+    </div>
+  </div>
+
+  <div id="seminav">
     <a href="index.html"><img src="src/logo.png" width="235" style="float: left;"></a>
-    <a><img src="src/datgi.png" height="36" style="float: right; padding-left: 12px;"></a>
-    <a><img src="src/insueh.png" height="36" style="float: right; padding-left: 12px;"></a>
-    <a onclick="bid()"><img src="src/ipchal.png" height="36" style="float: right; padding-left: 12px;"></a>
-    <a><img src="src/dungrok.png" height="36" style="float: right; padding-left: 12px;"></a>
+    <a><img src="src/datgi.png" height="36"></a>
+    <a><img src="src/insueh.png" height="36"></a>
+    <a onclick="bid()"><img src="src/ipchal.png" height="36"></a>
+    <a><img src="src/dungrok.png" height="36"></a>
   </div>
   <div class="chunkdiv" style="margin-bottom: 10px">
     <span>사건번호: </span>
@@ -125,7 +242,7 @@
     <span style="float: right;">경매 6계</span>
     <span style="float: right;">매각기일</span>
   </div>
-  <table style="width: 800px; border-collapse: collapse; font-size: 12px;">
+  <table>
     <tbody id="detail">
       <tr class="detail_row">
         <th class="detail_type">소재지</th>
@@ -194,7 +311,7 @@
   </div>
   <div class="chunkdiv">
     <p>매각토지/건물현황</p>
-    <table style="width: 800px; border-collapse: collapse; font-size: 12px;">
+    <table>
       <tbody id="status">
         <tr>
           <th>목록</th>
@@ -233,23 +350,39 @@
   </div>
   <div class="chunkdiv">
     <p>댓글</p>
-    <input placeholder="댓글 작성하기" style="width: 776px; height: 35px; margin: 0 12px 0 12px; padding-left: 10px; border: #dde3e6 solid 1px; border-radius: 2px;">
+    <input placeholder="댓글 작성하기" id="comment_input">
     <div id="comment">
-      <p>zxxv12</p><br>
+      <p onclick="viewRating()">zxxv12</p><br>
       <p>2019-11-18 15:10 . 신고</p><br>
       <p>괜찮은데요.</p><br>
       <br>
-      <p><span>답글 11</span><span style="float: right;">싫어요 0 </span><span style="float: right;"> 좋아요 4</span></p>
+      <p><span style="float: left;">답글 11</span><span>싫어요 0</span><span>좋아요 4</span></p>
     </div>
     <hr>
+
   </div>
 
   <script>
     var bid = function () {
-      var enterPrice = prompt("입찰 가격을 적어주세요 (원)", "1000");
-      if (enterPrice != null) {
-          alert("입찰되셨습니다!")
+      var enterPrice = prompt("입찰 가격을 적어주세요 (원)", "0");
+      if (enterPrice != null && enterPrice === '' + parseInt(enterPrice)) {
+          alert("입찰되셨습니다!");
+      } else {
+          alert("오류!")
       }
+    }
+
+    var userInfo = document.getElementById('user_info');
+    var infoBox = document.getElementById('info_box');
+
+    var viewRating = function () {
+        userInfo.style.display = 'block';
+        infoBox.style.display = 'flex';
+    }
+
+    var closeRating = function () {
+        userInfo.style.display = 'none';
+        infoBox.style.display = 'none';
     }
   </script>
 </body>
