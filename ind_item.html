@@ -116,7 +116,7 @@
     <a href="index.html"><img src="src/logo.png" width="235" style="float: left;"></a>
     <a><img src="src/datgi.png" height="36" style="float: right; padding-left: 12px;"></a>
     <a><img src="src/insueh.png" height="36" style="float: right; padding-left: 12px;"></a>
-    <a><img src="src/ipchal.png" height="36" style="float: right; padding-left: 12px;"></a>
+    <a onclick="bid()"><img src="src/ipchal.png" height="36" style="float: right; padding-left: 12px;"></a>
     <a><img src="src/dungrok.png" height="36" style="float: right; padding-left: 12px;"></a>
   </div>
   <div class="chunkdiv" style="margin-bottom: 10px">
@@ -243,5 +243,14 @@
     </div>
     <hr>
   </div>
+
+  <script>
+    var bid = function () {
+      var enterPrice = prompt("입찰 가격을 적어주세요 (원)", "1000");
+      if (enterPrice != null) {
+          alert("입찰되셨습니다!")
+      }
+    }
+  </script>
 </body>
 </html>
