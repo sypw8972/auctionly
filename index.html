@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="utf-8">
@@ -51,6 +51,7 @@
           <a class="rightnav" href="hot_results.html">더보기</a>
         </div>
         <div id="hotproducts">
+          <!--
           <div class="oneproduct">
             <img src="src/houseimg.jpg" width="150" height="155">
             <p class="productname">김해시 공장</p>
@@ -211,6 +212,7 @@
               <span class="nakprice">827,364,723원</span>
             </p>
           </div>
+          -->
         </div>
       </div>
     </div>
@@ -223,7 +225,7 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
-
+  <script src="js/hotproducts.js"></script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
       $(function(){
@@ -237,6 +239,21 @@
       $(function(){
           $("#mypage").load("mypage_login.html");
       });
+
+      let prod = [
+          { s: 'src/pics/1.jpg', name: '김해시 공장', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/2.jpeg', name: '인천시 근린상가', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/3.jpeg', name: '인천시 복합상가', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/4.jpg', name: '인천시 빌라', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/5.jpeg', name: '인천시 아파트', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/6.jpg', name: '고양시 공장', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/7.jpg', name: '서대문구 근린상가', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/8.jpeg', name: '서대문구 복합상가', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/9.jpeg', name: '서대문구 빌라', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' },
+          { s: 'src/pics/10.jpg', name: '서대문구 아파트', gp: '1,527,364,723원', jp: '927,364,723원', np: '827,364,723원' }
+      ];
+
+      renderHot('hotproducts', 'oneproduct', prod);
   </script>
 </body>
 

@@ -293,9 +293,9 @@
     </tbody>
   </table>
   <div style="width: 800px; height: 160px; margin-top: 10px">
-    <img src="src/houseimg.jpg" width="260" height="170">
-    <img src="src/houseimg.jpg" width="260" height="170" style="margin-left: 5px">
-    <img src="src/houseimg.jpg" width="260" height="170" style="margin-left: 5px">
+    <img src="src/pics/1.jpg" width="260" height="170">
+    <img src="src/pics/6.jpg" width="260" height="170" style="margin-left: 5px">
+    <img src="src/pics/7.jpg" width="260" height="170" style="margin-left: 5px">
   </div>
   <div class="chunkdiv" style="display: flex; flex-wrap: wrap;">
     <div class="file_buttons">토지등기</div>
@@ -372,15 +372,15 @@
       }
     }
 
-    var userInfo = document.getElementById('user_info');
-    var infoBox = document.getElementById('info_box');
+    let userInfo = document.getElementById('user_info');
+    let infoBox = document.getElementById('info_box');
 
-    var viewRating = function () {
+    function viewRating () {
         userInfo.style.display = 'block';
         infoBox.style.display = 'flex';
     }
 
-    var closeRating = function () {
+    function closeRating () {
         userInfo.style.display = 'none';
         infoBox.style.display = 'none';
     }
