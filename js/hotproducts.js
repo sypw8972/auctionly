@@ -30,8 +30,8 @@ function createBody(className, imgsrc, productName, gp, jp, np) {
   mainDiv.appendChild(writePrice('gam', 'gamprice', '감', gp));
   mainDiv.appendChild(document.createElement('BR'));
   mainDiv.appendChild(writePrice('jeo', 'jeoprice', '저', jp));
-  mainDiv.appendChild(document.createElement('BR'));
-  mainDiv.appendChild(writePrice('nak', 'nakprice', '낙', np));
+  //mainDiv.appendChild(document.createElement('BR'));
+  //mainDiv.appendChild(writePrice('nak', 'nakprice', '낙', np));
   return mainDiv;
 }
 
@@ -40,5 +40,4 @@ function renderHot(idName, c, data) {
   for (let element of data) {
     id.appendChild(createBody(c, element['s'], element['name'], element['gp'], element['jp'], element['np']));
   }
-
 }

@@ -3,213 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <style>
-      body {
-        width: 820px;
-        padding: 18px 10px 0 10px;
-        margin: 0;
-      }
-
-      #seminav {
-        width: 800px;
-        height: 36px;
-      }
-
-      #seminav img {
-        float: right;
-        padding-left: 12px;
-      }
-
-      .chunkdiv {
-        width: 800px;
-        margin: 30px 0 30px 0;
-      }
-
-      .detail_type {
-        width: 8%;
-        font-weight: normal;
-        background-color: #eeeeee;
-      }
-
-      .detail_row {
-        width: inherit;
-        height: 30px;
-      }
-
-      #detail tr {
-        height: 30px;
-      }
-
-      #detail td {
-        padding-left: 10px;
-      }
-
-      .detail_det {
-        width: 24%;
-      }
-
-      .detail_det2 {
-        width: 20%;
-      }
-
-      .detail_blank {
-
-      }
-
-      table {
-        width: 800px;
-        border-collapse: collapse;
-        font-size: 12px;
-      }
-
-      table, th, td {
-        border: #999999 solid 1px;
-      }
-
-      .file_buttons{
-        width: 103px;
-        height: 26px;
-        margin: 5px;
-        background-color: #34597C;
-        color: white;
-        text-align: center;
-        font-size: 13px;
-        padding-top: 10px;
-        border-radius: 2px;
-      }
-
-      #status th {
-        font-weight: normal;
-        background-color: #eeeeee;
-      }
-
-      #status tr {
-        height: 30px;
-      }
-
-      #status td {
-        text-align: center;
-      }
-
-      .mokrok {
-        width: 7%;
-      }
-
-      .jibun {
-        width: 16%;
-      }
-
-      .yongdo1 {
-        width: 15%;
-      }
-
-      .yongdo2 {
-        width: 13%;
-      }
-
-      .danga {
-        width: 9%;
-      }
-
-      .gamjungga {
-        12%
-      }
-
-      #comment {
-        width: 776px;
-        margin: 15px 12px 15px 12px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      #comment p {
-        font-size: 8px;
-        margin: 0;
-        line-height: 2px;
-      }
-
-      #comment span {
-        float: right;
-        margin-right: 16px;
-      }
-
-      #comment_input {
-        width: 776px;
-        height: 35px;
-        margin: 0 12px 0 12px;
-        padding-left: 10px;
-        border: #dde3e6 solid 1px;
-        border-radius: 2px;
-      }
-
-      #user_info {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: black;
-        opacity: 50%;
-        display: none;
-      }
-
-      #info_box {
-        width: 60%;
-        height: 30%;
-        top: 35%;
-        left: 20%;
-        position: fixed;
-        background-color: white;
-        opacity: 100%;
-        display: none;
-        flex-wrap: wrap;
-        border-radius: 5px;
-      }
-
-      #info_box h1 {
-        margin: 47px 0 10px 20px;
-        font-size: 36px;
-      }
-
-      #info_box h3 {
-        margin-left: 20px;
-        font-size: 16px;
-      }
-
-      #info_box h3 span {
-        font-size: 12px;
-        font-weight: normal;
-      }
-
-      #rating, #grade {
-        width: 49.8%;
-        height: 30%;
-        border-top: lightgray solid 1px;
-        text-align: center;
-      }
-
-      #rating {
-        border-right: lightgray solid 1px;
-      }
-
-      #info_box p {
-        font-size: 40px;
-        margin-top: 15px;
-      }
-
-      #which_rating, #which_grade {
-        font-size: 50px;
-      }
-
-      #which_rating {
-        color: blue;
-      }
-
-      #which_grade {
-        color: red;
-      }
-
-    </style>
+    <link rel="stylesheet" href="css/pop_up_style.css">
 </head>
 <body>
   <div id="user_info" onclick="closeRating()"></div>
@@ -218,7 +12,8 @@
       <img src="src/profileimg.png" width="30%" style="margin: 20px;">
       <div>
         <h1>User ID</h1>
-        <h3>주소:<br><span>0x32D57e7ffEb6F17f85F5D9EA8EC657459B7D084F</span></h3>
+        <button id="rate_button" onclick="activateRate()">평가하기</button>
+        <h3>주소:<br><span id="address">0x32D57e7ffEb6F17f85F5D9EA8EC657459B7D084F</span></h3>
       </div>
     </div>
     <div id="rating">
@@ -239,8 +34,8 @@
   <div class="chunkdiv" style="margin-bottom: 10px">
     <span>사건번호: </span>
     <span>2019 타경 22941</span>
-    <span style="float: right;">경매 6계</span>
-    <span style="float: right;">매각기일</span>
+    <span style="float: right;">강기혁</span>
+    <span style="float: right; font-weight: bold;">사용자:&nbsp;</span>
   </div>
   <table>
     <tbody id="detail">
@@ -253,14 +48,14 @@
         <td class="detail_det">임야</td>
         <th class="detail_type">감정가</th>
         <td class="detail_det2">35,467,000 원</td>
-        <td class="detail_blank"></td>
+        <td style="font-weight: normal; background-color: #eeeeee; text-align: center;">입찰현황</td>
       </tr>
       <tr>
         <th class="detail_type">토지면적</th>
         <td class="detail_det">10728.768평</td>
         <th class="detail_type">최저가</th>
         <td class="detail_det2">(70%) 24,827,000 원</td>
-        <td class="detail_blank"></td>
+        <td class="detail_blank" id="bidders">강기혁: 20000000원</td>
       </tr>
       <tr>
         <th class="detail_type">건물면적</th>
@@ -352,7 +147,7 @@
     <p>댓글</p>
     <input placeholder="댓글 작성하기" id="comment_input">
     <div id="comment">
-      <p onclick="viewRating()">zxxv12</p><br>
+      <p onclick="viewRating()" id="user_id">zxxv12</p><br>
       <p>2019-11-18 15:10 . 신고</p><br>
       <p>괜찮은데요.</p><br>
       <br>
@@ -384,6 +179,9 @@
         userInfo.style.display = 'none';
         infoBox.style.display = 'none';
     }
+
   </script>
+  <script src="js/script_rate.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
 </html>
